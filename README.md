@@ -28,7 +28,7 @@ Scan
 Processing
 
 ### 📊 Scan Results & History
-![History](./screenshots/history
+![History](./screenshots:/history.jpg)
 
 ## Tech Stack
 - React Native
