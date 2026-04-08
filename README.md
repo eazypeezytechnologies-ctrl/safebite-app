@@ -1,10 +1,19 @@
 # 🛡️ SafeBite
+"Scan products. Detect allergens. Protect real people."
 
 ## Overview
 SafeBite is a mobile app that helps users scan food and beauty products to detect allergens, ingredients, and safety concerns in real time.
 
-## Why I Built It
-SafeBite was designed to make product safety easier for people with allergies and sensitivities by combining barcode scanning, product lookup, and clear ingredient visibility.
+## 🎯 Why I Built It
+
+Many allergy apps miss hidden ingredients or rely on incomplete data.  
+
+SafeBite was built to provide safer, real-world decision support by combining:
+- Rule-based allergen detection (high safety priority)
+- AI-powered ingredient analysis
+- A system designed for families managing multiple allergy profiles  
+
+The goal is simple: reduce risk and improve everyday safety.
 
 ## Features
 - Barcode-based product lookup
@@ -12,6 +21,15 @@ SafeBite was designed to make product safety easier for people with allergies an
 - Mobile-friendly experience
 - Cached product results for faster repeat searches
 - Built for real-world daily use
+
+## 🧠 Key Innovation
+
+SafeBite uses a dual-layer safety system:
+
+- AI analysis for interpreting ingredients and labels  
+- Rule-based validation to prioritize known allergen risks  
+
+When results conflict, the system defaults to the safer outcome, reducing the chance of harmful recommendations.
 
 ## 📸 App Preview
 
@@ -37,6 +55,7 @@ SafeBite was designed to make product safety easier for people with allergies an
 - TypeScript
 - Supabase
 - External product APIs
+- Node.js (API layer)
 
 ## What I Learned
 - Structuring a mobile app around real user safety needs
