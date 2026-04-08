@@ -16,19 +16,20 @@ SafeBite was designed to make product safety easier for people with allergies an
 ## 📸 App Preview
 
 ### 🛡️ Allergy Guardian (Home)
-Home
+<img src="./screenshots:/home.jpg" width="300" />
 
 ### 👨‍👩‍👧 Multi-Profile Safety System
-Profiles
+<img src="./screenshots:/profiles.jpg" width="300" />
 
 ### 📷 Smart Scanning
-Scan
+<img src="./screenshots:/classic-scan.jpg" width="300" />
 
 ### 🧠 AI Processing Pipeline
-Processing
+<img src="./screenshots:/ai-capture-processing.jpg" width="300" />
+
 
 ### 📊 Scan Results & History
-![History](./screenshots:/history.jpg)
+<img src="./screenshots:/history.jpg" width="300" />
 
 ## Tech Stack
 - React Native
