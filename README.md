@@ -1,5 +1,6 @@
 # 🛡️ SafeBite
 "Scan products. Detect allergens. Protect real people."
+
 🚧 Actively under development — real-world tested with live product scans
 
 ## 💡 Why I Built SafeBite
