@@ -15,6 +15,8 @@ SafeBite was built to provide safer, real-world decision support by combining:
 
 The goal is simple: reduce risk and improve everyday safety.
 
+🚧 Actively under development — real-world tested with live product scans
+
 ## Features
 - Barcode-based product lookup
 - Ingredient and allergen detection
@@ -30,6 +32,119 @@ SafeBite uses a dual-layer safety system:
 - Rule-based validation to prioritize known allergen risks  
 
 When results conflict, the system defaults to the safer outcome, reducing the chance of harmful recommendations.
+
+## 🆕 Latest Progress — v3.0 (Core System Stabilization)
+
+April 10th, 2026
+
+### 🧠 Unified Evaluation Engine (CORE BREAKTHROUGH)
+- Replaced all legacy `calculateVerdict()` logic with a single unified evaluation system
+- Introduced clear decision hierarchy:
+  - Direct allergen match → highest priority
+  - AI validation → overrides false positives
+  - Trusted products → safe override (with safeguards)
+  - Incomplete data → lowers confidence
+
+**Result:**
+- Consistent verdicts across ALL screens
+- Eliminated conflicting logic between AI + rule engine
+
+---
+
+### ⚡ Performance Optimization (Scan → Result Flow)
+
+**Before:**
+- 10+ API sources (many useless)
+- Sequential calls (slow)
+- 30s timeouts + retries
+- UI blocked during loading
+
+**After:**
+- Reduced to high-value sources (OpenFoodFacts + USDA)
+- Parallelized:
+  - API calls
+  - Cache checks
+  - Background processing
+
+**Improvements:**
+- Faster scan response
+- Instant product display
+- Background loading for secondary data
+- Reduced timeouts (30s → 8s)
+
+---
+
+### 🔐 Supabase Backend Fully Activated
+
+**Critical Fix:**
+- Added `SUPABASE_SERVICE_KEY`
+
+**Now Working:**
+- Profile CRUD
+- Scan history logging
+- Product caching (UPSERT)
+- Analytics tracking
+- RPC functions
+
+---
+
+### 📊 Data Pipeline Audit
+
+**Strong Sources:**
+- OpenFoodFacts
+- Supabase
+- AI analysis
+
+**Removed / Reduced:**
+- UPCItemDB
+- EAN Search
+- Datakick
+- Unused APIs
+
+---
+
+### 🔄 Scan Stability Fixes
+- Prevented duplicate scans
+- Added cooldown + dedupe logic
+- Improved scan reliability
+
+---
+
+### 🧪 Real-World Testing Insights
+
+**Issues Found:**
+- Profile update error (PGRST204)
+- Minor async/state warnings
+- Missing AI alternatives
+- Incomplete dietary preferences
+
+---
+
+### 🧭 Product Direction
+
+SafeBite is evolving into:
+
+> A personalized safety assistant for families — not just a barcode scanner
+
+Key realization:
+- Allergies ≠ Eczema ≠ Preferences
+
+---
+
+### 🧩 Next Sprint
+1. Fix profile schema mismatch
+2. Clean async/state errors
+3. Expand dietary preferences
+4. Restore AI alternatives
+
+---
+
+### 🏁 Current Status
+
+- Core system working  
+- Backend connected  
+- Performance improved  
+- Final stability in progress  
 
 ## 📸 App Preview
 
