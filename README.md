@@ -151,6 +151,12 @@ Key realization:
 - Performance improved  
 - Final stability in progress  
 
+## 🎥 Demo
+
+Coming soon — live demo of SafeBite in real-world usage.
+
+(Currently used in active testing with real product scans and family profiles)
+
 ## 📸 App Preview
 
 ### 🛡️ Allergy Guardian (Home)
