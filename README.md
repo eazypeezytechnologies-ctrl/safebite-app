@@ -1,5 +1,9 @@
 # 🛡️ SafeBite
 
+<p align="center">
+  <img src="assets/safebite-logo.svg" alt="SafeBite logo" width="480">
+</p>
+
 **Scan products. Understand ingredients. Make more informed allergy-safety decisions.**
 
 > **Public showcase repository**  
