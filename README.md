@@ -1,195 +1,97 @@
 # 🛡️ SafeBite
-"Scan products. Detect allergens. Protect real people."
 
-🚧 Actively under development — real-world tested with live product scans
+**Scan products. Understand ingredients. Make more informed allergy-safety decisions.**
 
-## 💡 Why I Built SafeBite
+> **Public showcase repository**  
+> This repository documents SafeBite’s purpose, product direction, progress, and lessons learned. The active application source remains private while reliability, security, and data integrations are being tested.
 
-SafeBite started as a personal solution.
+## Why SafeBite Exists
 
-My daughter has allergies and eczema, and like many parents, I realized quickly that reading labels isn’t enough. Ingredients are often hidden, unclear, or change without notice.
+SafeBite began as a personal solution for my family.
 
-As she grows, her allergies evolve — which makes it even harder to trust what’s actually safe.
+My daughter lives with serious allergies and eczema. Product labels can be unclear, incomplete, or changed without warning, and families often have to compare multiple sources before deciding whether a food, beauty, or household product may be appropriate.
 
-I didn’t want to rely on guesswork.
+SafeBite is being built to reduce that uncertainty by combining product lookup, ingredient visibility, personalized profiles, source transparency, and user verification guidance.
 
-So I built SafeBite — a system that scans products and helps families make safer decisions in real time, based on their specific needs.
+## Current Product Direction
 
-This is not a demo project.
+SafeBite is evolving beyond a basic barcode scanner into a personalized product-safety assistant that can support:
 
-It’s something I actively use and test in real life.
+- Barcode and manual product lookup
+- Food, beauty, and household product categories
+- Multiple family profiles and individual allergen needs
+- Ingredient and allergen review
+- Product-source attribution and freshness indicators
+- Scan history and cached results
+- Recall awareness
+- Confidence and incomplete-data warnings
+- Safer fallback behavior when sources disagree
 
-## Overview
-SafeBite is a mobile app that helps users scan food and beauty products to detect allergens, ingredients, and safety concerns in real time.
+## Latest Progress — July 2026
 
-## Features
-- Barcode-based product lookup
-- Ingredient and allergen detection
-- Mobile-friendly experience
-- Cached product results for faster repeat searches
-- Built for real-world daily use
+Recent work has focused on **lookup reliability, source transparency, and safer infrastructure**.
 
-## 🧠 Key Innovation
+### Completed or improved
 
-SafeBite uses a dual-layer safety system:
+- Consolidated product-evaluation logic to reduce conflicting results
+- Reduced dependence on low-value or unreliable product sources
+- Improved product lookup speed through parallel requests and caching
+- Added stronger handling for duplicate scans and repeated lookups
+- Continued family-profile, scan-history, and product-cache workflows
+- Fixed a LiveData auto-sync render loop
+- Strengthened Supabase configuration and removed project-specific credentials from public documentation
+- Completed a Phase 1 recovery effort centered on product lookup reliability and visible source information
 
-- AI analysis for interpreting ingredients and labels  
-- Rule-based validation to prioritize known allergen risks  
+### Current focus
 
-When results conflict, the system defaults to the safer outcome, reducing the chance of harmful recommendations.
+- Improving ingredient and allergen data coverage
+- Distinguishing direct allergen matches from uncertain or incomplete information
+- Adding clearer confidence, source, and freshness labels
+- Expanding manual search and fallback behavior
+- Continuing security review and backend separation
+- Preparing for broader controlled testing
 
-## 🆕 Latest Progress — v3.0 (Core System Stabilization)
+## Product Challenges
 
-April 10th, 2026
+SafeBite works with data that may be incomplete, inconsistent, outdated, or different across providers.
 
-### 🧠 Unified Evaluation Engine (CORE BREAKTHROUGH)
-- Replaced all legacy `calculateVerdict()` logic with a single unified evaluation system
-- Introduced clear decision hierarchy:
-  - Direct allergen match → highest priority
-  - AI validation → overrides false positives
-  - Trusted products → safe override (with safeguards)
-  - Incomplete data → lowers confidence
+The product therefore must not treat a successful scan as proof that an item is safe. Important design requirements include:
 
-**Result:**
-- Consistent verdicts across ALL screens
-- Eliminated conflicting logic between AI + rule engine
+- Showing where information came from
+- Identifying missing or conflicting data
+- Encouraging users to verify the physical label
+- Avoiding medical guarantees
+- Defaulting to caution when confidence is low
 
----
+## Technology
 
-### ⚡ Performance Optimization (Scan → Result Flow)
-
-**Before:**
-- 10+ API sources (many useless)
-- Sequential calls (slow)
-- 30s timeouts + retries
-- UI blocked during loading
-
-**After:**
-- Reduced to high-value sources (OpenFoodFacts + USDA)
-- Parallelized:
-  - API calls
-  - Cache checks
-  - Background processing
-
-**Improvements:**
-- Faster scan response
-- Instant product display
-- Background loading for secondary data
-- Reduced timeouts (30s → 8s)
-
----
-
-### 🔐 Supabase Backend Fully Activated
-
-**Critical Fix:**
-- Added `SUPABASE_SERVICE_KEY`
-
-**Now Working:**
-- Profile CRUD
-- Scan history logging
-- Product caching (UPSERT)
-- Analytics tracking
-- RPC functions
-
----
-
-### 📊 Data Pipeline Audit
-
-**Strong Sources:**
-- OpenFoodFacts
-- Supabase
-- AI analysis
-
-**Removed / Reduced:**
-- UPCItemDB
-- EAN Search
-- Datakick
-- Unused APIs
-
----
-
-### 🔄 Scan Stability Fixes
-- Prevented duplicate scans
-- Added cooldown + dedupe logic
-- Improved scan reliability
-
----
-
-### 🧪 Real-World Testing Insights
-
-**Issues Found:**
-- Profile update error (PGRST204)
-- Minor async/state warnings
-- Missing AI alternatives
-- Incomplete dietary preferences
-
----
-
-### 🧭 Product Direction
-
-SafeBite is evolving into:
-
-> A personalized safety assistant for families — not just a barcode scanner
-
-Key realization:
-- Allergies ≠ Eczema ≠ Preferences
-
----
-
-### 🧩 Next Sprint
-1. Fix profile schema mismatch
-2. Clean async/state errors
-3. Expand dietary preferences
-4. Restore AI alternatives
-
----
-
-### 🏁 Current Status
-
-- Core system working  
-- Backend connected  
-- Performance improved  
-- Final stability in progress  
-
-## 🎥 Demo
-
-Coming soon — live demo of SafeBite in real-world usage.
-
-(Currently used in active testing with real product scans and family profiles)
-
-## 📸 App Preview
-
-### 🛡️ Allergy Guardian (Home)
-<img src="./screenshots:/home.jpg" width="300" />
-
-### 👨‍👩‍👧 Multi-Profile Safety System
-<img src="./screenshots:/profiles.jpg" width="300" />
-
-### 📷 Smart Scanning
-<img src="./screenshots:/classic-scan.jpg" width="300" />
-
-### 🧠 AI Processing Pipeline
-<img src="./screenshots:/ai-capture-processing.jpg" width="300" />
-
-
-### 📊 Scan Results & History
-<img src="./screenshots:/history.jpg" width="300" />
-
-## Tech Stack
-- React Native
-- Expo
+- React Native / Expo
 - TypeScript
 - Supabase
-- External product APIs
-- Node.js (API layer)
-
-## What I Learned
-- Structuring a mobile app around real user safety needs
-- Working with third-party APIs and fallback logic
-- Designing app flows that balance speed, trust, and usability
+- Node.js and API integrations
+- Product databases and recall sources
+- Local caching and structured fallback logic
 
 ## Status
-In active development and being expanded with stronger UX, better product intelligence, and improved reliability.
 
-## Author
-Babatunde Jegede
+**Active build and reliability phase.**
+
+The public repository is a portfolio and progress record. It is not the current production source repository and should not be interpreted as a released medical or safety product.
+
+## Safety Notice
+
+SafeBite is an informational tool under development. It does not replace medical advice, emergency guidance, manufacturer confirmation, or careful review of the physical product label.
+
+## Related Links
+
+- [Eazy Peezy Technologies Portfolio](https://github.com/eazypeezytechnologies-ctrl/Portfolio)
+- [Eazy Peezy Technologies](https://eazypeezytech.com)
+
+## Builder
+
+**Babatunde Jegede**  
+Founder, Eazy Peezy Technologies LLC
+
+---
+
+**Last updated: July 8, 2026**
